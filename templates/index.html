@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <style>
+        .carData_form div{
+            margin: 15px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body style="background-color :rgb(211, 227, 196); width: 800px; margin: 0 auto;">
+    <h1> Auto Car Price Prediction</h1>
+    <form method="GET" action="/predicted_price">
+        <div style="display: flex; gap: 50px;">
+            <div class="carData_form">
+                <div>
+                    <label>Symboling :</label>
+                    <input type = "text" name ="symboling">
+                </div>
+                <div>
+                    <label>normalized_losses :</label>
+                    <input type = "text" name="normalized_losses">
+                </div>
+                <div>
+                    <label>fuel_type :</label>
+                    <select name = "fuel_type">
+                        <option value="gas">Gas</option>
+                        <option value="diesel">Diesel</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Aspiration :</label>
+                    <select name = "aspiration">
+                        <option value="std">std</option>
+                        <option value="turbo">turbo</option>
+                    </select>
+                </div>
+                <div>
+                    <label>num_of_doors :</label>
+                    <select name = "num_of_doors">
+                        <option value="four">four</option>
+                        <option value="two">two</option>
+                    </select>
+                </div>
+                <div>
+                    <label>drive_wheels :</label>
+                    <select name = "drive_wheels">
+                        <option value="fwd">fwd</option>
+                        <option value="rwd">rwd</option>
+                        <option value="4wd">rwd</option>
+                    </select>
+                </div>
+                <div>
+                    <label>engine_location :</label>
+                    <select name = "engine_location">
+                        <option value="front">front</option>
+                        <option value="rear">rear</option>
+                    </select>
+                </div>
+                <div>
+                    <label>wheel_base :</label>
+                    <input type = "text" name="wheel_base">
+                </div>
+                <div>
+                    <label>length :</label>
+                    <input type = "text" name="length">
+                </div>
+                <div>
+                    <label>width :</label>
+                    <input type = "text" name="width">
+                </div>
+                <div>
+                    <label>height :</label>
+                    <input type = "text" name="height">
+                </div>
+                <div>
+                    <label>curb_weight :</label>
+                    <input type = "text" name="curb_weight">
+                </div>
+                <div>
+                    <label>num_of_cylinders :</label>
+                    <select name = "num_of_cylinders">
+                        <option value="four">four</option>
+                        <option value="six">six</option>
+                        <option value="five">five</option>
+                        <option value="eight">eight</option>
+                        <option value="two">two</option>
+                        <option value="three">three</option>
+                        <option value="twelve">twelve</option>
+                    </select>
+                </div>
+            </div>
+            <div class="carData_form">
+                <div>
+                    <label>engine_size :</label>
+                    <input type = "text" name="engine_size">
+                </div>
+                <div>
+                    <label>bore :</label>
+                    <input type = "text" name="bore">
+                </div>
+                <div>
+                    <label>stroke :</label>
+                    <input type = "text" name="stroke">
+                </div>
+                <div>
+                    <label>compression_ratio :</label>
+                    <input type = "text" name="compression_ratio">
+                </div>
+                <div>
+                    <label>horsepower :</label>
+                    <input type = "text" name="horsepower">
+                </div>
+                <div>
+                    <label>peak_rpm :</label>
+                    <input type = "text" name="peak_rpm">
+                </div>
+                <div>
+                    <label>city_mpg :</label>
+                    <input type = "text" name="city_mpg">
+                </div>
+                <div>
+                    <label>highway_mpg :</label>
+                    <input type = "text" name="highway_mpg">
+                </div>
+                <div>
+                    <label>make :</label>
+                    <select name = "make">
+                        <option value="alfa-romero">alfa-romero</option>
+                        <option value="audi">audi</option>
+                        <option value="bmw">bmw</option>
+                        <option value="chevrolet">chevrolet</option>
+                        <option value="dodge">dodge</option>
+                        <option value="honda">honda</option>
+                        <option value="isuzu">isuzu</option>
+                        <option value="jaguar">jaguar</option>
+                        <option value="mazda">mazda</option>
+                        <option value="mercedes-benz">mercedes-benz</option>
+                        <option value="mercury">mercury</option>
+                        <option value="mitsubishi">mitsubishi</option>
+                        <option value="nissan">nissan</option>
+                        <option value="peugot">peugot</option>
+                        <option value="plymouth">plymouth</option>
+                        <option value="porsche">porsche</option>
+                        <option value="renault">renault</option>
+                        <option value="saab">saab</option>
+                        <option value="subaru">subaru</option>
+                        <option value="toyota">toyota</option>
+                        <option value="volkswagen">volkswagen</option>
+                        <option value="volvo">volvo</option>
+                    </select>
+                </div>
+                <div>
+                    <label>body_style :</label>
+                    <select name = "body_style">
+                        <option value="convertible">convertible</option>
+                        <option value="hardtop">hardtop</option>
+                        <option value="hatchback">hatchback</option>
+                        <option value="sedan">sedan</option>
+                        <option value="wagon">wagon</option>
+                    </select>
+                </div>
+                <div>
+                    <label>engine_type :</label>
+                    <select name = "engine_type">
+                        <option value="dohc">dohc</option>
+                        <option value="dohcv">dohcv</option>
+                        <option value="l">l</option>
+                        <option value="ohc">ohc</option>
+                        <option value="ohcf">ohcf</option>
+                        <option value="ohcv">ohcv</option>
+                        <option value="rotor">rotor</option>
+                    </select>
+                </div>
+                <div>
+                    <label>fuel_system :</label>
+                    <select name = "fuel_system">
+                        <option value="1bbl">1bbl</option>
+                        <option value="2bbl">2bbl</option>
+                        <option value="4bbl">4bbl</option>
+                        <option value="idi">idi</option>
+                        <option value="mfi">mfi</option>
+                        <option value="mpfi">mpfi</option>
+                        <option value="spdi">spdi</option>
+                        <option value="spfi">spfi</option>
+                    </select>
+                </div>
+            
+            </div>
+        </div>
+        <div style="text-align: center; margin: 20px;">
+            <input type ="submit" value= "SUBMIT">
+        </div>
+        <p style="text-align: center;"> Your Car Predicted Price is <b>{{prediction}} /-RS. Only</b> </p>
+    </form>
+</body>
+</html>
